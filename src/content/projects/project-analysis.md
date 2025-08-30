@@ -70,7 +70,10 @@ This approach balances group sizes despite the right-skewed distribution, ensuri
 
 ```histogram
 [
-  { 
+  { "Budget Tier": "Low (≤33rd)", "Count": 1334 },
+  { "Budget Tier": "Mid (33rd–67th)", "Count": 1333 },
+  { "Budget Tier": "High (>67th)", "Count": 1333 }
+]
 ```
 
 **Explanation:**
@@ -83,7 +86,10 @@ Budgets are **right-skewed**, with most projects under ~$1.5M. Percentile-based 
 
 ```scatterplot
 [
-  { 
+  { "Budget Tier": "Low (≤33rd)", "Mean Complexity": 4.326 },
+  { "Budget Tier": "Mid (33rd–67th)", "Mean Complexity": 6.052 },
+  { "Budget Tier": "High (>67th)", "Mean Complexity": 7.655 }
+]
 ```
 
 **Explanation:**
@@ -94,7 +100,10 @@ This scatterplot shows **mean complexity scores** grouped by representative budg
 
 ```linechart
 [
-  { 
+  { "Budget Tier": "Low (≤33rd)", "Mean Complexity": 4.326 },
+  { "Budget Tier": "Mid (33rd–67th)", "Mean Complexity": 6.052 },
+  { "Budget Tier": "High (>67th)", "Mean Complexity": 7.655 }
+]
 ```
 
 **Explanation:**
@@ -107,7 +116,10 @@ The fitted trend indicates a **monotonic increase** in complexity with budget, s
 
 ```scatterplot
 [
-  { 
+  { "Budget Tier": "Low (≤33rd)", "Agile": 4.670, "Non-Agile": 3.982 },
+  { "Budget Tier": "Mid (33rd–67th)", "Agile": 6.667, "Non-Agile": 5.436 },
+  { "Budget Tier": "High (>67th)", "Agile": 8.919, "Non-Agile": 6.391 }
+]
 ```
 
 **Explanation:**
@@ -116,12 +128,15 @@ This scatterplot shows **mean complexity per budget tier** for Agile vs. Non‑A
 
 ### Regression Trend – By Methodology (Line)
 
-67th)", "Agile": 8.919, "Non-Agile": 6.391 }
-]" charttitle="" xaxislabel="" yaxislabel="" width="100%" height="320px" data-type="chart" data-chart-type="linechart" data-chart-data="[
+```linechart
+[
   { "Budget Tier": "Low (≤33rd)", "Agile": 4.670, "Non-Agile": 3.982 },
   { "Budget Tier": "Mid (33rd–67th)", "Agile": 6.667, "Non-Agile": 5.436 },
   { "Budget Tier": "High (>67th)", "Agile": 8.919, "Non-Agile": 6.391 }
-]" data-chart-title="" data-chart-x-axis-label="" data-chart-y-axis-label="" data-chart-width="100%" data-chart-height="320px">**Explanation:**
+]
+```
+
+**Explanation:**
 
 Methodology-specific trends **diverge** across tiers: **Agile** rises faster with budget than **Non‑Agile**, visually previewing the **interaction** confirmed by ANOVA.
 
@@ -129,12 +144,15 @@ Methodology-specific trends **diverge** across tiers: **Agile** rises faster wit
 
 ### Project Count by Budget Tier
 
-67th)", "Count": 1333 }
-]" charttitle="" xaxislabel="" yaxislabel="" width="100%" height="320px" data-type="chart" data-chart-type="barchart" data-chart-data="[
+```barchart
+[
   { "Budget Tier": "Low (≤33rd)", "Count": 1334 },
   { "Budget Tier": "Mid (33rd–67th)", "Count": 1333 },
   { "Budget Tier": "High (>67th)", "Count": 1333 }
-]" data-chart-title="" data-chart-x-axis-label="" data-chart-y-axis-label="" data-chart-width="100%" data-chart-height="320px">**Explanation:**
+]
+```
+
+**Explanation:**
 
 Counts are balanced across tiers, enabling meaningful comparisons in subsequent charts and the ANOVA.
 
@@ -142,12 +160,15 @@ Counts are balanced across tiers, enabling meaningful comparisons in subsequent 
 
 ### Mean Complexity by Tier (Agile vs. Non-Agile)
 
-67th)", "Agile": 8.919, "Non-Agile": 6.391 }
-]" charttitle="" xaxislabel="" yaxislabel="" width="100%" height="320px" data-type="chart" data-chart-type="barchart" data-chart-data="[
+```barchart
+[
   { "Budget Tier": "Low (≤33rd)", "Agile": 4.670, "Non-Agile": 3.982 },
   { "Budget Tier": "Mid (33rd–67th)", "Agile": 6.667, "Non-Agile": 5.436 },
   { "Budget Tier": "High (>67th)", "Agile": 8.919, "Non-Agile": 6.391 }
-]" data-chart-title="" data-chart-x-axis-label="" data-chart-y-axis-label="" data-chart-width="100%" data-chart-height="320px">**Explanation:**
+]
+```
+
+**Explanation:**
 
 Compares **mean complexity** for **Agile** and **Non-Agile** within each tier. Agile is higher in every tier, with the largest difference at **High** budgets.
 
@@ -155,12 +176,15 @@ Compares **mean complexity** for **Agile** and **Non-Agile** within each tier. A
 
 ### Complexity Gap (Agile − Non-Agile)
 
-67th)", "Gap": 2.528 }
-]" charttitle="" xaxislabel="" yaxislabel="" width="100%" height="320px" data-type="chart" data-chart-type="linechart" data-chart-data="[
+```linechart
+[
   { "Budget Tier": "Low (≤33rd)", "Gap": 0.688 },
   { "Budget Tier": "Mid (33rd–67th)", "Gap": 1.231 },
   { "Budget Tier": "High (>67th)", "Gap": 2.528 }
-]" data-chart-title="" data-chart-x-axis-label="" data-chart-y-axis-label="" data-chart-width="100%" data-chart-height="320px">**Explanation:**
+]
+```
+
+**Explanation:**
 
 The **gap widens** from Low to High tiers, implying methodology differences intensify as projects grow in size and scope.
 
@@ -172,7 +196,7 @@ The **gap widens** from Low to High tiers, implying methodology differences inte
 
 2) **Methodology main effect** — Agile has higher mean complexity.
 
-3) **Interaction** — Agile’s advantage **increases** with budget tier.
+3) **Interaction** — Agile's advantage **increases** with budget tier.
 
 **Budget vs. Complexity:** The histogram, scatterplots, and **trend lines** indicate a **right-skewed** budget distribution and a **positive association** between budget and complexity.
 
@@ -214,11 +238,11 @@ Portfolio policy should **match methodology to problem structure**:
 
 **Post-hoc analysis:** Tukey HSD to identify which tier pairs differ. Include **effect sizes** (η² / partial η²).
 
-**Assumptions:** Check residual normality and homoscedasticity (Levene’s). If violated, use **robust ANOVA** or **Kruskal–Wallis + Dunn’s**.
+**Assumptions:** Check residual normality and homoscedasticity (Levene's). If violated, use **robust ANOVA** or **Kruskal–Wallis + Dunn's**.
 
 **Selection bias audit:** Model methodology choice from pre-project variables; consider **propensity score matching** before re-estimating effects.
 
-**Outcome linkage:** Add delivery KPIs (cycle time, defect density, rework). Validate whether Agile’s higher complexity maintains or improves outcomes at Mid/High tiers.
+**Outcome linkage:** Add delivery KPIs (cycle time, defect density, rework). Validate whether Agile's higher complexity maintains or improves outcomes at Mid/High tiers.
 
 **Sensitivity:** Re-tier at **25/50/75** and **20/40/60/80** to confirm robustness of direction and magnitude.
 
