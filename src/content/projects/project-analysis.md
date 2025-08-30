@@ -1,6 +1,6 @@
 ---
-title: "Project Method Analysis – Budget Tiers & Complexity"
-description: "Percentile-based budget tiers (≤33rd, 33rd–67th, >67th) comparing Agile vs. Non-Agile complexity with pre-ANOVA visuals and two-way ANOVA insights."
+title: "Project Method Analysis - Budget Tiers & Complexity"
+description: "Percentile-based budget tiers comparing Agile vs. Non-Agile complexity with pre-ANOVA visuals and two-way ANOVA insights."
 author: "Roger Lee Cormier"
 date: "2025-08-30"
 tags: ["Analytics", "Project Method Analysis", "Risk Analysis", "Budget Analysis"]
